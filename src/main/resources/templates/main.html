@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+8101----nginx001
+<h2>name:<span th:text="${session.name}">name</span></h2>
+
+<p th:each="item,itemStatu:${list}">
+	<a th:href="${item.href}" th:text="${item.text}" th:if="${#strings.contains(item.text,'<')==false}"></a>
+	<a style="border: solid 1px red;padding: 10px;display: inline-block;" th:utext="${item.text}" th:if="${#strings.contains(item.text,'<')==true}"></a>
+</p>
+
+</body>
+</html>
